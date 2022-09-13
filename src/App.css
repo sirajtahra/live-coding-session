@@ -1,38 +1,57 @@
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: row;
+    background-color: #f5f5f5;
+    height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.category .question {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    margin: .5rem;
+    width: 100%;
+    padding: 5px 10px;
+    border-right: 3px solid green;
+    border-radius: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.category .question h3 {
+    font-size: 14px;
 }
 
-.App-link {
-  color: #61dafb;
+.category .question .status {
+    /* circle css */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.category .question .status.partially-correct { 
+    background-color: yellow;
+}
+
+.category .question .status.correct {
+    background-color: green;
+}
+
+.category .question .status.incorrect {
+    background-color: red;
+}
+
+.category .question .status.unattempted {
+    background-color: white;
+    border: 1px solid black;
 }
